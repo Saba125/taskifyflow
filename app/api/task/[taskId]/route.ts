@@ -68,3 +68,28 @@ export async function POST(
     return NextResponse.json("[EDIT_TASK ERROR]");
   }
 }
+export async function DELETE(
+  req: Request,
+  {
+    params: { taskId },
+  }: {
+    params: {
+      taskId: string;
+    };
+  }
+) {
+  try {
+    const currentProfile = await CurrentProfile();
+    if (!currentProfile) {
+      return new NextResponse("Unauthorized", { status: 401 });
+    }
+    const deleteTask = await db.task.delete({
+      where: {
+        id: taskId,
+      },
+    });
+    return NextResponse.json(deleteTask);
+  } catch (error) {
+    return NextResponse.json("[EDIT_TASK ERROR]");
+  }
+}

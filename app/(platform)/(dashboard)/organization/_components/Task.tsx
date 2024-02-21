@@ -25,7 +25,12 @@ const Task = ({ task }: TaskProps) => {
         {task.taskContent}
       </CardContent>
       <CardFooter className="flex justify-between">
-        <Button variant="destructive">Delete</Button>
+        <Button
+          onClick={() => onOpen("delete-task", { task })}
+          variant="destructive"
+        >
+          Delete
+        </Button>
         <Button
           onClick={() => onOpen("edit-task", { task })}
           className="flex items-center justify-center gap-2"

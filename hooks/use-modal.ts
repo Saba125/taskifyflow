@@ -1,6 +1,6 @@
 import { Board, Task } from "@prisma/client";
 import { create } from "zustand";
-export type ModalType = "edit-task" | "add-board" | "add-task";
+export type ModalType = "edit-task" | "add-board" | "add-task" | "delete-task";
 interface ModalData {
   task?: Task;
   boardId?: string;
