@@ -14,6 +14,9 @@ const OrganizationPage = async () => {
       createdAt: "desc",
     },
   });
+  if (!boards) {
+    throw new Error("Something went wrong");
+  }
   return (
     <div>
       <h3 className="font-bold text-3xl">My work</h3>
