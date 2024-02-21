@@ -57,7 +57,7 @@ const AddBoardModal = () => {
 
   useEffect(() => {
     setIsMounted(true);
-  });
+  }, []);
 
   if (!isMounted) {
     return null;

@@ -55,7 +55,8 @@ const Modal = () => {
 
   useEffect(() => {
     setIsMounted(true);
-  });
+  }, []);
+
   useEffect(() => {
     form.setValue("title", task?.taskTitle as string);
     form.setValue("content", task?.taskContent as string);
