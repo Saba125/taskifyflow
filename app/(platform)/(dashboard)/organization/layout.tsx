@@ -6,11 +6,7 @@ const OrganizationLayout = async ({
   children: React.ReactNode;
 }) => {
   const profile = await CreateProfile();
-  if (profile) {
-    console.log("User logged in");
-  } else {
-    console.log("User not logged in");
-  }
+
   return (
     <main className="pt-20 mx-auto  md:pt-24 px-4 max-w-6xl 2xl:max-w-screen-xl">
       <div className="flex gap-x-7">
